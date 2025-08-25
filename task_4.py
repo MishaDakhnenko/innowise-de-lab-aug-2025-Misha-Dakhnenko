@@ -1,16 +1,21 @@
-import random
+scores = [75, 88, 95, 0, 100]
+total_score = 0
 
-# Загадываем случайное число от 1 до 5
-secret_number = random.randint(1, 5)
+for score in scores:
+    # Пропуск, если балл отрицательный
+    if score < 0:
+        continue
 
-# Запрашиваем число у пользователя
-user_guess = int(input("Угадай число от 1 до 5: "))
+    # Если встретился ноль, прерываем цикл
+    if score == 0:
+        print("Обработка прервана.")
+        break
 
-# Сравниваем числа и выводим результат
-if user_guess == secret_number:
-    print("Ты угадал!")
-elif user_guess > secret_number:
-    print("Слишком много!")
+    # В остальных случаях добавляем балл
+    total_score += score
+    print(f"Добавлен балл: {score}")
 else:
-    print("Слишком мало!")
-    
+    # else выполнится, только если цикл завершился без break
+    print("Все данные успешно обработаны.")
+
+print(f"\nИтоговая сумма баллов: {total_score}")
