@@ -1,0 +1,1 @@
+SELECT * FROM IT_Department_View;
